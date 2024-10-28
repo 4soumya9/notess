@@ -22,6 +22,16 @@ const Home = () => {
   },[pasteId])
 
   function createPaste(){
+
+    if (!title.trim()) {
+      toast.error("Title is required"); // Show an error if title is empty
+      return; // Stop execution if title is missing
+    }
+
+    if (!value.trim()) {
+      toast.error("Content is required"); // Show an error if content is empty
+      return; // Stop execution if content is missing
+    }
     const paste = {
         title: title,
         content: value,
