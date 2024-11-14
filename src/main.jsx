@@ -8,8 +8,10 @@ import  { Toaster } from 'react-hot-toast';
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Provider store={store}>
-      <App />
-      <Toaster/>
+    <div className="min-h-screen w-screen overflow-hidden">
+        <App />
+        <Toaster position="top-right"/>
+      </div>
     </Provider>
   </StrictMode>
 );

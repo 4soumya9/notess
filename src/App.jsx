@@ -9,7 +9,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <div>
+      <div className="w-full h-full flex flex-col">
         <Navbar />
         <Home />
       </div>
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
   {
     path: "/pastes",
     element: (
-      <div>
+      <div className="w-full h-full flex flex-col">
         <Navbar />
         <Paste />
       </div>
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
   {
     path: "/pastes/:id",
     element: (
-      <div>
+      <div className="w-full h-full flex flex-col">
         <Navbar />
         <ViewPaste />
       </div>
@@ -35,9 +35,11 @@ const router = createBrowserRouter([
   },
 ]);
 function App() {
-  return <div>
-    <RouterProvider router={router}/>
-  </div>;
+  return (
+    <div>
+      <RouterProvider router={router} />
+    </div>
+  );
 }
 
 export default App;
