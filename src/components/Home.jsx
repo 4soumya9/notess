@@ -24,11 +24,11 @@ const Home = () => {
       return; // Stop execution if content is missing
     }
 
-    const duplicateTitle = pastes.some((paste) => paste.title === title);
-    if (duplicateTitle) {
-      toast.error("A paste with this title already exists");
-      return; // Stop execution if a duplicate title is found
-    }
+    // const duplicateTitle = pastes.some((paste) => paste.title === title);
+    // if (duplicateTitle) {
+    //   toast.error("A paste with this title already exists");
+    //   return; // Stop execution if a duplicate title is found
+    // }
     const paste = {
       title: title,
       content: value,
