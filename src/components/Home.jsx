@@ -14,6 +14,21 @@ const Home = () => {
   const dispatch = useDispatch();
 
   const createPaste = () => {
+    if (!title.trim()) {
+      toast.error("Title is required"); // Show an error if title is empty
+      return; // Stop execution if title is missing
+    }
+
+    if (!value.trim()) {
+      toast.error("Content is required"); // Show an error if content is empty
+      return; // Stop execution if content is missing
+    }
+
+    const duplicateTitle = pastes.some((paste) => paste.title === title);
+    if (duplicateTitle) {
+      toast.error("A paste with this title already exists");
+      return; // Stop execution if a duplicate title is found
+    }
     const paste = {
       title: title,
       content: value,
